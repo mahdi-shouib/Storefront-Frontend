@@ -4,10 +4,14 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavBar } from './components/nav-bar/nav-bar';
+import { Footer } from './components/footer/footer';
 
 @NgModule({
 	declarations: [
-		App
+		App,
+		NavBar,
+		Footer
 	],
 	imports: [
 		BrowserModule,
