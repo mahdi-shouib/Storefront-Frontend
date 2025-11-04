@@ -1,1 +1,12 @@
-<p>nav-bar works!</p>
+<nav class="navbar sticky-top">
+	<div class="container-fluid ms-2">
+		<a id="logo" class="d-flex gap-2 navbar-brand" routerLink="/">
+			<img src="store.svg" alt="Logo" width="40">
+			<span>My Store</span>
+		</a>
+		<a class="nav-item me-2" routerLink="/cart">
+			<img src="cart.svg" alt="Cart" width="40">
+			<span class="translate-middle badge rounded-pill bg-danger">0</span>
+		</a>
+	</div>
+</nav>
