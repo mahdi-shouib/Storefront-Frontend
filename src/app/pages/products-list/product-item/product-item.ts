@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Product } from '../../../models/product';
 
 @Component({
 	selector: 'app-product-item',
@@ -7,5 +8,15 @@ import { Component } from '@angular/core';
 	styleUrl: './product-item.css',
 })
 export class ProductItem {
+	@Input() product: Product;
 
+	constructor() {
+		this.product = {
+			id: 0,
+			name: '',
+			price: 0,
+			url: '',
+			description: ''
+		}
+	}
 }
