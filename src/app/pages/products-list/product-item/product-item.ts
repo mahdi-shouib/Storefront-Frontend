@@ -8,7 +8,9 @@ import { Product } from '../../../models/product';
 	styleUrl: './product-item.css',
 })
 export class ProductItem {
+
 	@Input() product: Product;
+	quantity: number;
 
 	constructor() {
 		this.product = {
@@ -18,5 +20,10 @@ export class ProductItem {
 			url: '',
 			description: ''
 		}
+		this.quantity = 1;
+	}
+
+	submitForm() {
+		alert('Item Added!');
 	}
 }
