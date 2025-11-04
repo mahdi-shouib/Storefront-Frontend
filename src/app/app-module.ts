@@ -4,6 +4,7 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { NavBar } from './components/nav-bar/nav-bar';
 import { Footer } from './components/footer/footer';
 import { ProductsList } from './pages/products-list/products-list';
@@ -28,7 +29,8 @@ import { OrderSuccess } from './pages/order-success/order-success';
 	],
 	providers: [
 		provideBrowserGlobalErrorListeners(),
-		provideClientHydration(withEventReplay())
+		provideClientHydration(withEventReplay()),
+		provideHttpClient(withFetch())
 	],
 	bootstrap: [App]
 })
