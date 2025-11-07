@@ -1,1 +1,35 @@
-<p>cart works!</p>
+<div class="container-fluid my-5">
+	<div class="row gy-4">
+		<div class="col-lg-8">
+			<div class="card">
+				<div class="card-body p-3">
+					@if (items.length < 1) { <div class="text-center text-muted py-3">
+						Your cart is empty.
+				</div>
+				}
+				@else {
+				<div class="list-group p-2">
+					@for (item of items; track $index) {
+					<div class="list-group-item d-flex justify-content-center py-3 p-0 row">
+						<div class="d-flex flex-column col-auto">
+							<img class="rounded-2 border" [src]="item.product.url" [alt]="item.product.name" />
+						</div>
+						<div id="item-info" class="d-flex flex-column col mt-3">
+							<div class="d-flex justify-content-between">
+								<div class="h4"><strong>{{ item.product.name }}</strong></div>
+								<button class="btn btn-sm btn-outline-danger">Remove</button>
+							</div>
+							<div class="fw-bold text-primary">${{ item.product.price }}</div>
+						</div>
+					</div>
+					}
+				</div>
+				}
+			</div>
+			<div class="card-footer">
+				<span class="fw-bold">Total:</span>
+				<span class="h5 text-primary ms-1">$1000</span>
+			</div>
+		</div>
+	</div>
+</div>
