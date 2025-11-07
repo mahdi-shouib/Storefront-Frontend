@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../../../models/product';
+import { Item } from '../../../models/item';
 
 @Component({
 	selector: 'app-product-item',
@@ -11,6 +12,7 @@ export class ProductItem {
 
 	@Input() product: Product;
 	quantity: number;
+	@Output() addItem: EventEmitter<Item> = new EventEmitter;
 
 	constructor() {
 		this.product = {
@@ -24,6 +26,9 @@ export class ProductItem {
 	}
 
 	submitForm() {
-		alert('Item Added!');
+		this.addItem.emit({
+			product: this.product,
+			quantity: this.quantity
+		})
 	}
 }
