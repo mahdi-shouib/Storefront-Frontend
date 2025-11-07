@@ -21,7 +21,6 @@ export class CartService {
 	}
 
 	inCart(item: Item): boolean {
-		console.log(this.items.map(i => i.product.id));
 		return this.items.map(i => i.product.id).includes(item.product.id);
 	}
 
