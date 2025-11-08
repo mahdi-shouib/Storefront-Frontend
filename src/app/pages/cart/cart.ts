@@ -11,12 +11,14 @@ import { CartService } from '../../services/cart-service';
 export class Cart implements OnInit {
 
 	items: Item[] = [];
+	total: number = 0;
 
 	constructor(private cartService: CartService) { }
 
 	ngOnInit(): void {
 		this.cartService.getItems().subscribe(res => {
 			this.items = res;
+			this.total = this.cartService.getTotal();
 		});
 	}
 
