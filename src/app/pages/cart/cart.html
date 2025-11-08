@@ -17,7 +17,7 @@
 						<div class="d-flex flex-column col mt-3">
 							<div class="item-info d-flex justify-content-between">
 								<div class="h4"><strong>{{ item.product.name }}</strong></div>
-								<button class="btn btn-sm btn-outline-danger">Remove</button>
+								<button (click)="removeItem(item)" class="btn btn-sm btn-outline-danger">Remove</button>
 							</div>
 							<div class="fw-bold text-primary">${{ item.product.price }}</div>
 							<div class="d-flex gap-2 mt-auto">

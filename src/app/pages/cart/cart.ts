@@ -19,4 +19,9 @@ export class Cart implements OnInit {
 			this.items = res;
 		});
 	}
+
+	removeItem(item: Item) {
+		this.cartService.removeFromCart(item);
+		alert('Item removed!');
+	}
 }
