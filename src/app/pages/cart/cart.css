@@ -1,4 +1,4 @@
-#item-info {
+.item-info {
 	min-width: 300px;
 }
 
@@ -6,6 +6,6 @@ img {
 	max-width: 260px;
 }
 
-#item-amout {
+.item-amout {
 	width: 60px;
 }

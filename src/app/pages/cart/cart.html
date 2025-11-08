@@ -14,16 +14,16 @@
 						<div class="d-flex flex-column col-auto">
 							<img class="rounded-2 border" [src]="item.product.url" [alt]="item.product.name" />
 						</div>
-						<div id="item-info" class="d-flex flex-column col mt-3">
-							<div class="d-flex justify-content-between">
+						<div class="d-flex flex-column col mt-3">
+							<div class="item-info d-flex justify-content-between">
 								<div class="h4"><strong>{{ item.product.name }}</strong></div>
 								<button class="btn btn-sm btn-outline-danger">Remove</button>
 							</div>
 							<div class="fw-bold text-primary">${{ item.product.price }}</div>
 							<div class="d-flex gap-2 mt-auto">
 								<span class="fw-semibold h5">Amout:</span>
-								<input class="form-control form-control-sm" required min="1" max="99" type="number"
-									name="amout" id="item-amout" value="{{ item.quantity }}">
+								<input class="item-amout form-control form-control-sm" required min="1" max="99" type="number"
+									name="amout" value="{{ item.quantity }}">
 							</div>
 						</div>
 					</div>
