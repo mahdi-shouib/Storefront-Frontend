@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Item } from '../models/item';
 
 @Injectable({
@@ -7,17 +8,23 @@ import { Item } from '../models/item';
 export class CartService {
 
 	items: Item[] = [];
+	cartChanged: EventEmitter<Item[]> = new EventEmitter;
 
-	getItems(): Item[] {
-		return this.items;
+	getItems(): Observable<Item[]> {
+		return new Observable<Item[]>(sub => {
+			sub.next(this.items);
+			this.cartChanged.subscribe(items => sub.next(items));
+		});
 	}
 
 	addToCart(item: Item): void {
 		this.items.unshift(item);
+		this.cartChanged.emit(this.items);
 	}
 
 	removeFromCart(item: Item): void {
-		this.items.filter(i => i.product.id !== item.product.id);
+		this.items = this.items.filter(i => i.product.id !== item.product.id);
+		this.cartChanged.emit(this.items);
 	}
 
 	inCart(item: Item): boolean {
@@ -26,6 +33,7 @@ export class CartService {
 
 	clearCart(): Item[] {
 		this.items = [];
+		this.cartChanged.emit(this.items);
 		return this.items;
 	}
 }
