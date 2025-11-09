@@ -14,6 +14,7 @@ import { Cart } from './pages/cart/cart';
 import { OrderSuccess } from './pages/order-success/order-success';
 import { ProductItem } from './pages/products-list/product-item/product-item';
 import { CartItem } from './pages/cart/cart-item/cart-item';
+import { PaymentForm } from './pages/cart/payment-form/payment-form';
 
 @NgModule({
 	declarations: [
@@ -26,6 +27,7 @@ import { CartItem } from './pages/cart/cart-item/cart-item';
 		OrderSuccess,
 		ProductItem,
 		CartItem,
+		PaymentForm,
 	],
 	imports: [
 		BrowserModule,

@@ -13,14 +13,6 @@ export class Cart implements OnInit {
 	items: Item[] = [];
 	total: number = 0;
 
-	payment = {
-		name: '',
-		cardNumber: '',
-		expiry: '',
-		cvv: '',
-		address: ''
-	};
-
 	constructor(private cartService: CartService) { }
 
 	ngOnInit(): void {
@@ -37,6 +29,5 @@ export class Cart implements OnInit {
 
 	pay() {
 		this.items = this.cartService.clearCart();
-		this.payment = { name: '', cardNumber: '', expiry: '', cvv: '', address: '' };
 	}
 }
