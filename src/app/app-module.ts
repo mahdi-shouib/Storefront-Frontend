@@ -13,6 +13,7 @@ import { ProductDetails } from './pages/product-details/product-details';
 import { Cart } from './pages/cart/cart';
 import { OrderSuccess } from './pages/order-success/order-success';
 import { ProductItem } from './pages/products-list/product-item/product-item';
+import { CartItem } from './pages/cart/cart-item/cart-item';
 
 @NgModule({
 	declarations: [
@@ -24,6 +25,7 @@ import { ProductItem } from './pages/products-list/product-item/product-item';
 		Cart,
 		OrderSuccess,
 		ProductItem,
+		CartItem,
 	],
 	imports: [
 		BrowserModule,
