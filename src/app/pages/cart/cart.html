@@ -10,7 +10,7 @@
 				@else {
 				<div class="list-group p-2">
 					@for (item of items; track $index) {
-					<app-cart-item [item]="item" (removeItem)="removeItem($event)"></app-cart-item>
+					<app-cart-item [item]="item" (removeItem)="removeItem($event)" (updateQuantity)="updateQuantity($event)"></app-cart-item>
 					}
 				</div>
 				}

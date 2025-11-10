@@ -30,4 +30,9 @@ export class Cart implements OnInit {
 	pay() {
 		this.items = this.cartService.clearCart();
 	}
+
+	updateQuantity(item: Item) {
+		this.items = this.items.map(i => i.product.id === item.product.id ? item : i);
+		this.total = this.cartService.getTotal();
+	}
 }

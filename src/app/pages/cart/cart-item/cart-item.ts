@@ -11,6 +11,7 @@ export class CartItem {
 
 	@Input() item: Item;
 	@Output() removeItem: EventEmitter<Item> = new EventEmitter;
+	@Output() updateQuantity: EventEmitter<Item> = new EventEmitter;
 
 	constructor() {
 		this.item = {
@@ -25,7 +26,16 @@ export class CartItem {
 		}
 	}
 
-	clickRemove() {
+	clickRemove(): void {
 		this.removeItem.emit(this.item);
+	}
+
+	changeAmount(quantity: number): void {
+		if (!quantity) {
+			quantity = 1;
+		}
+		quantity = Math.min(Math.max(quantity, 1), 99);
+		this.item.quantity = quantity;
+		this.updateQuantity.emit(this.item);
 	}
 }
