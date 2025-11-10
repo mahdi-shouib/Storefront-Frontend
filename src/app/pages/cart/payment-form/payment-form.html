@@ -30,7 +30,7 @@
 				<input name="address" class="form-control form-control-sm" required [(ngModel)]="payment.address" />
 			</div>
 			<input class="btn btn-success w-100" type="submit"
-				[value]="total > 0 ? `Pay $${total}` : 'Nothing is free :)'" [disabled]="form.invalid || total === 0">
+				[value]="total > 0 ? `Pay $${total.toFixed(2)}` : 'Nothing is free :)'" [disabled]="form.invalid || total === 0">
 		</form>
 	</div>
 </div>
