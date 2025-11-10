@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Payment } from '../../../models/payment';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-payment-form',
@@ -14,7 +15,7 @@ export class PaymentForm {
 
 	@Output() pay: EventEmitter<void> = new EventEmitter;
 
-	constructor() {
+	constructor(private router: Router) {
 		this.total = 0;
 		this.payment = {
 			name: '',
@@ -34,5 +35,6 @@ export class PaymentForm {
 			address: ''
 		}
 		this.pay.emit();
+		this.router.navigateByUrl('success');
 	}
 }
