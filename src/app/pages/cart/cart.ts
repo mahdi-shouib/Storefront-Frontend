@@ -28,6 +28,7 @@ export class Cart implements OnInit {
 	}
 
 	pay() {
+		this.cartService.saveOrder();
 		this.items = this.cartService.clearCart();
 	}
 

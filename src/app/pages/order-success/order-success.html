@@ -8,21 +8,21 @@
 			<h5 class="text-primary mb-3">Order Details</h5>
 			<ul class="p-0 m-0">
 				<li class="d-flex justify-content-between border-bottom pb-1">
-					<span>Ordered By:</span>
-					<strong>Mahdi Shouib</strong>
+					<span>ETA:</span>
+					<strong>3-5 Business Days</strong>
 				</li>
 				<li class="d-flex justify-content-between py-1">
 					<span>Total Items:</span>
-					<strong>10</strong>
+					<strong>{{ itemCount }}</strong>
 				</li>
 				<li class="d-flex justify-content-between border-top pt-1">
 					<span>Total Price:</span>
-					<strong class="text-success">$1000</strong>
+					<strong class="text-primary">${{ total.toFixed(2) }}</strong>
 				</li>
 			</ul>
 		</div>
 		<div class="text-center">
-			<button class="btn btn-primary">Back to Products List</button>
+			<button class="btn btn-primary" routerLink="/">Back to Products List</button>
 		</div>
 	</div>
 </div>

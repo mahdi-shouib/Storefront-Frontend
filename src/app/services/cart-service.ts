@@ -10,6 +10,11 @@ export class CartService {
 	items: Item[] = [];
 	cartChanged: EventEmitter<Item[]> = new EventEmitter;
 
+	lastOrder = {
+		itemCount: 0,
+		total: 0
+	};
+
 	getItems(): Observable<Item[]> {
 		return new Observable<Item[]>(sub => {
 			sub.next(this.items);
@@ -35,6 +40,17 @@ export class CartService {
 		this.items = [];
 		this.cartChanged.emit(this.items);
 		return this.items;
+	}
+
+	saveOrder(): void {
+		this.lastOrder = {
+			itemCount: this.items.length,
+			total: this.getTotal()
+		};
+	}
+
+	getLastOrder() {
+		return this.lastOrder;
 	}
 
 	getTotal(): number {
