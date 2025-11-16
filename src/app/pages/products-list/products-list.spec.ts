@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 import { ProductsList } from './products-list';
+import { ProductItem } from './product-item/product-item';
 
 describe('ProductsList', () => {
 	let component: ProductsList;
@@ -8,7 +10,8 @@ describe('ProductsList', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ProductsList]
+			declarations: [ProductsList, ProductItem],
+			providers: [provideHttpClient(withFetch())]
 		})
 			.compileComponents();
 
