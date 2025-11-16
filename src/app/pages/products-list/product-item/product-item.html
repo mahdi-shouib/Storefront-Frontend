@@ -1,5 +1,5 @@
 <div class="card text-center h-100 mx-auto">
-	<img class="card-img-top" [src]="product.url" [alt]="product.name">
+	<img class="card-img-top" [src]="product.url" [alt]="product.name" [routerLink]="`product/${product.id}`">
 	<div class="card-footer">
 		<h5 class="card-title mb-2">{{ product.name }} • <span class="fw-bold">${{ product.price }}</span></h5>
 		<form #form="ngForm" (ngSubmit)="submitForm()" class="d-flex gap-2">
