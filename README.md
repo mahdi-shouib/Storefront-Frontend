@@ -1,59 +1,71 @@
-# StorefrontFrontend
+# Storefront Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
+This is the frontend for a storefront application built with **Node.js**, **TypeScript**, **Angular**, and tested with **Karma** and **Jasmine**. It uses Angular to create a dynamic and responsive user interface for the storefront.
 
-## Development server
+## Setup
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 1. Clone the Repository
 
 ```bash
-ng generate component component-name
+git clone https://github.com/mahdi-shouib/Storefront-Frontend.git
+
+cd Storefront-Frontend
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 2. Install Dependencies
 
 ```bash
-ng generate --help
+npm i
 ```
 
-## Building
+### 3. Run Development Server
 
-To build the project run:
+To start the Angular development server, run:
 
 ```bash
-ng build
+npm start
 ```
+The application will be running at: `http://localhost:4200`
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### 4. Build and Run Production Server
 
-## Running unit tests
+To build and serve the production version of the application, run the following commands:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+**1.** Build the project:
 
 ```bash
-ng test
+npm run build
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+**2.** Run the server:
 
 ```bash
-ng e2e
+node dist/Storefront-Frontend/server/server.mjs
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+The production server will be created in `/dist/Storefront-Frontend` and will be running at: `http://localhost:4000`
 
-## Additional Resources
+## Usage
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The application consists of 4 main pages:
+
+1. **Product Listing Page**: Displays all available products with options to view details and add to cart.
+
+2. **Product Details Page**: Shows detailed information about a selected product, including name, image, description, and price.
+
+3. **Shopping Cart Page**: Allows users to view items added to their cart, update quantities, and proceed to checkout.
+
+4. **Order Success Page**: Displays a confirmation message after a successful order placement, with order details.
+
+## Testing
+
+To run the tests, use the following command:
+
+```bash
+npm test
+```
+
+## Contributing
+
+Contributions are welcome!  
+Please open an issue or submit a pull request.
